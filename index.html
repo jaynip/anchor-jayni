@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jayni Patel — Podcast Host, Brand Presenter & Event Anchor. Confidence on camera. Presence on stage."
+    />
+    <title>Jayni Patel — Podcast Host · Brand Presenter · Event Anchor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Archivo:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+      <div class="wrap nav__inner">
+        <a
+          href="#hero"
+          class="logo"
+          data-cursor
+          aria-label="Jayni Patel — home"
+        >
+          <span class="logo__name">Jayni Patel</span>
+        </a>
+        <nav class="nav__links" id="navLinks">
+          <a href="#showreel" data-cursor>Showreel</a>
+          <a href="#services" data-cursor>Services</a>
+          <a href="#podcast" data-cursor>Podcast</a>
+          <a href="#contact" data-cursor>Contact</a>
+        </nav>
+        <a href="#contact" class="nav__cta" data-cursor>
+          Get in touch
+          <svg
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== HERO (sliding banners) ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__slides" id="heroSlides">
+        <div class="hero__slide hero__slide--video active">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto">
+            <source src="podcast%20clip.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero__slide hero__slide--video">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto">
+            <source src="0605%20(2).mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero__slide hero__slide--video">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto">
+            <source src="hero3.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="wrap hero__content">
+        <div class="hero__texts" id="heroTexts">
+          <div class="hslide-text active">
+            <p class="hero__eyebrow">Podcast Host • Brand Presenter • Event Anchor</p>
+            <h1 class="hero__title">Jayni Patel</h1>
+            <p class="hero__tag">Confidence on camera. <em>Presence on stage.</em></p>
+          </div>
+          <div class="hslide-text">
+            <p class="hero__eyebrow">Podcasts • Conversations • Storytelling</p>
+            <h1 class="hero__title">On Air, On Point</h1>
+            <p class="hero__tag">Meaningful conversations that <em>truly connect.</em></p>
+          </div>
+          <div class="hslide-text">
+            <p class="hero__eyebrow">Brand Presenter • VJ • Commercial Shoots</p>
+            <h1 class="hero__title">Your Brand, On Camera</h1>
+            <p class="hero__tag">A premium presence for <em>every frame.</em></p>
+          </div>
+        </div>
+
+        <p class="hero__lead">
+          From hosting engaging podcasts and representing brands on camera to creating
+          memorable event experiences, I bring confidence, communication and connection
+          to every audience.
+        </p>
+
+        <div class="hero__cta">
+          <a href="https://wa.me/919904720772" class="btn btn--solid" target="_blank" rel="noopener" data-cursor>Chat on WhatsApp</a>
+          <a href="tel:+919904720772" class="btn btn--line" data-cursor>Call Me</a>
+          <a href="https://youtu.be/AVS3RoTJqJI" class="btn btn--text" target="_blank" rel="noopener" data-cursor>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            Watch Showreel
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__dots" id="heroDots">
+        <button class="hero__dot active" aria-label="Slide 1" data-cursor></button>
+        <button class="hero__dot" aria-label="Slide 2" data-cursor></button>
+        <button class="hero__dot" aria-label="Slide 3" data-cursor></button>
+      </div>
+    </section>
+
+    <!-- ===== TRUST STRIP ===== -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip__track" id="stripTrack">
+        <span>Podcast Host • Brand Presenter • Event Anchor</span><i>/</i>
+        <span>Gujarati • Hindi • English</span><i>/</i>
+        <span>Ahmedabad, India • Available for Outdoor Shoots</span><i>/</i>
+        <span
+          >Available for Podcasts • Brand Collaborations • Weddings • Corporate
+          Events</span
+        ><i>/</i>
+      </div>
+    </div>
+
+    <!-- ===== SHOWREEL & PORTFOLIO ===== -->
+    <section class="section showreel" id="showreel">
+      <div class="wrap">
+        <div class="head reveal">
+          <div>
+            <p class="label">( Showreel &amp; Portfolio )</p>
+            <h2 class="display">See Jayni In Action</h2>
+            <p class="head__sub">
+              A glimpse into podcasts, brand collaborations and live events.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reel" id="reel">
+        <div class="reel__track" id="reelTrack">
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DXePrJDIT_s/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DXePrJDIT_s/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DXzLNXmz_xd/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DXzLNXmz_xd/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DZEYdcpoGCA/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DZEYdcpoGCA/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DY1N7ykCFlx/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DY1N7ykCFlx/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DYwQ1wYCwaK/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DYwQ1wYCwaK/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DYdwjdKIWOT/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DYdwjdKIWOT/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DVOqWUJDwm-/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DVOqWUJDwm-/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+          <article class="rcard">
+            <div class="rcard__embed">
+              <iframe
+                src="https://www.instagram.com/reel/DYW_-RwTXBu/embed/"
+                loading="lazy"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen
+                title="Jayni Patel — Instagram reel"
+              ></iframe>
+            </div>
+            <a
+              class="rcard__bar"
+              href="https://www.instagram.com/reel/DYW_-RwTXBu/"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+            >
+              <span class="card__cat">Instagram Reel</span>
+              <span class="rcard__view"
+                >View
+                <svg
+                  viewBox="0 0 24 24"
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services no-js" id="services">
+      <div class="srv-stage" id="srvStage">
+        <div class="wrap">
+          <div class="srv-main">
+            <div class="srv-head">
+              <p class="label">( What I offer )</p>
+              <h2 class="display">Services</h2>
+              <p class="label srv-hint">Scroll to explore</p>
+            </div>
+            <div class="srv-stack">
+              <div class="srv-words" id="srvWords">
+                <span>Podcast Hosting</span>
+                <span>Brand Presentation</span>
+                <span>Event Anchoring</span>
+                <span>Video Jockey</span>
+                <span>Commercial Shoots</span>
+                <span>Influencer Collabs</span>
+              </div>
+              <div class="srv-descs" id="srvDescs">
+                <p>
+                  Meaningful conversations, engaging interviews and professional
+                  moderation that keeps audiences connected.
+                </p>
+                <p>
+                  Representing brands with confidence, authenticity and a
+                  premium on-camera presence.
+                </p>
+                <p>
+                  Hosting weddings, social celebrations and corporate events
+                  with energy, elegance and audience engagement.
+                </p>
+                <p>
+                  Bringing energy and personality as a video jockey — engaging
+                  audiences across shows, events and digital platforms.
+                </p>
+                <p>
+                  Featuring in commercials and promotional films with a natural,
+                  confident and camera-ready presence.
+                </p>
+                <p>
+                  Partnering with brands on authentic, engaging content that
+                  connects with the right audience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="srv-bar"><span id="srvBar"></span></div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PODCAST ===== -->
+    <section class="section podcast" id="podcast">
+      <div class="wrap">
+        <div class="head reveal">
+          <div>
+            <p class="label">( Featured Podcast )</p>
+            <h2 class="display">Watch The Full Episode</h2>
+            <p class="head__sub">
+              The complete podcast conversation — in one place.
+            </p>
+          </div>
+          <a
+            class="podcast__cta"
+            href="https://youtu.be/AVS3RoTJqJI"
+            target="_blank"
+            rel="noopener"
+            data-cursor
+          >
+            Watch on YouTube
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="podcast__frame" id="podcastFrame" data-ytid="AVS3RoTJqJI">
+          <button
+            class="podcast__poster"
+            id="podcastPlay"
+            aria-label="Play the full podcast episode"
+            data-cursor
+          >
+            <img
+              src="YT%20Poster.png"
+              alt="Jayni Patel — full podcast episode"
+              onerror="this.onerror=null;this.src='podcast-poster.jpg'"
+            />
+            <span class="podcast__playbtn"
+              ><svg
+                viewBox="0 0 24 24"
+                width="30"
+                height="30"
+                fill="currentColor"
+              >
+                <path d="M8 5v14l11-7z" /></svg
+            ></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 class="display">What People Say</h2>
+          <p class="label">( Testimonials )</p>
+        </div>
+      </div>
+
+      <div class="marquee reveal">
+        <div class="marquee__track" id="marqueeTrack">
+          <figure class="quote">
+            <p>
+              “Jayni became the face of Saptkosha — presenting our moringa-based
+              products on camera with warmth and credibility. From our
+              promotional video to the podcast, she brought our brand story to
+              life beautifully.”
+            </p>
+            <figcaption>
+              <strong>Umesh Patel</strong><em>Founder &amp; CEO, Saptkosha</em>
+            </figcaption>
+          </figure>
+          <figure class="quote">
+            <p>
+              “Jayni hosted my podcast with such ease and professionalism. Her
+              questions were thoughtful and she kept the entire conversation
+              engaging from start to finish.”
+            </p>
+            <figcaption>
+              <strong>Deepak Halani</strong><em>Founder, HEPN Rice · BNI</em>
+            </figcaption>
+          </figure>
+          <figure class="quote">
+            <p>
+              “Jayni hosted my podcast wonderfully — well-prepared, articulate
+              and warm. She brought out the best in our conversation and made it
+              genuinely enjoyable.”
+            </p>
+            <figcaption>
+              <strong>Darshan Thakkar</strong
+              ><em>Managing Director, Vatsalya Concept School, Diodar</em>
+            </figcaption>
+          </figure>
+          <figure class="quote">
+            <p>
+              “A fantastic podcast host. Jayni was sharp, articulate and so easy
+              to work with — she kept the session lively and on-point
+              throughout.”
+            </p>
+            <figcaption>
+              <strong>Keval Lakhlani</strong
+              ><em>Business Consultant, Bada Business</em>
+            </figcaption>
+          </figure>
+          <figure class="quote">
+            <p>
+              “Jayni represented us on camera as a brand presenter and VJ with
+              real confidence and clarity. She communicated our message warmly
+              and connected effortlessly with the audience.”
+            </p>
+            <figcaption>
+              <strong>Dr. Sheetal Sahoo</strong
+              ><em>Obstetrics &amp; Gynecology, Medipolis Palanpur</em>
+            </figcaption>
+          </figure>
+          <figure class="quote">
+            <p>
+              “Jayni hosted our haldi and sangeet and made both evenings
+              unforgettable — elegant, warm and perfectly timed. Our guests are
+              still talking about her energy.”
+            </p>
+            <figcaption>
+              <strong>Harsimran Kaur</strong
+              ><em>Wedding Host — Haldi &amp; Sangeet</em>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="contact__head reveal">
+          <p class="label light">( Contact )</p>
+          <h2 class="contact__title">
+            <span class="mask"><span>Let's create something</span></span>
+            <span class="mask"
+              ><span><em>meaningful</em> together.</span></span
+            >
+          </h2>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__intro reveal">
+            <p class="contact__lead">
+              Whether you're looking for a podcast host, brand presenter, event
+              anchor, or collaboration partner, I'd love to hear from you.
+            </p>
+            <div class="contact__links">
+              <a
+                href="https://wa.me/919904720772"
+                class="cact"
+                target="_blank"
+                rel="noopener"
+                data-cursor
+                ><span>Chat on WhatsApp</span><i></i
+              ></a>
+              <a
+                href="https://www.instagram.com/anchor_jaynipatel"
+                class="cact"
+                target="_blank"
+                rel="noopener"
+                data-cursor
+                ><span>Instagram</span><i></i
+              ></a>
+              <a href="mailto:jaynipatel02@gmail.com" class="cact" data-cursor
+                ><span>Email</span><i></i
+              ></a>
+            </div>
+            <p class="contact__loc">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path d="M12 21s-7-5.3-7-11a7 7 0 1114 0c0 5.7-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              <strong>Ahmedabad, India</strong> — available for outdoor shoots.
+            </p>
+          </div>
+
+          <form class="form reveal" id="contactForm" novalidate>
+            <div class="uf">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=" "
+                required
+              /><label for="name">Name</label>
+            </div>
+            <div class="uf">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder=" "
+                required
+              /><label for="phone">Phone Number</label>
+            </div>
+            <div class="uf">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                required
+              /><label for="email">Email</label>
+            </div>
+            <div class="uf">
+              <select id="requirement" name="requirement" required>
+                <option value="" disabled selected></option>
+                <option>Podcast Hosting</option>
+                <option>Brand Presentation</option>
+                <option>Event Anchoring</option>
+                <option>Collaboration</option>
+                <option>Other</option>
+              </select>
+              <label for="requirement" class="uf__static">Requirement</label>
+            </div>
+            <div class="uf">
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder=" "
+              ></textarea
+              ><label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn-send" data-cursor>
+              <span>Send Message</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="17"
+                height="17"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </button>
+            <p class="form__note" id="formNote" hidden>
+              Thank you — your inquiry has been sent. I'll be in touch shortly.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__top reveal">
+          <h2 class="footer__word">Jayni Patel</h2>
+        </div>
+        <div class="footer__bar">
+          <span class="label"
+            >Podcast Host • Brand Presenter • Event Anchor</span
+          >
+          <nav class="footer__links">
+            <a
+              href="https://www.instagram.com/anchor_jaynipatel"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+              >Instagram</a
+            >
+            <a
+              href="https://wa.me/919904720772"
+              target="_blank"
+              rel="noopener"
+              data-cursor
+              >WhatsApp</a
+            >
+          </nav>
+          <span class="label">© <span id="year"></span> Jayni Patel</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close></div>
+      <div class="lightbox__panel" role="dialog" aria-modal="true">
+        <button class="lightbox__close" data-close aria-label="Close">
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+        <div class="lightbox__video">
+          <span class="lightbox__play"
+            ><svg
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="currentColor"
+            >
+              <path d="M8 5v14l11-7z" /></svg
+          ></span>
+          <p class="lightbox__hint">Video reel preview</p>
+        </div>
+        <div class="lightbox__info">
+          <span class="card__cat" id="lbCat"></span>
+          <h3 id="lbTitle"></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/919904720772"
+      class="fab"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      data-cursor
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.37c0-4.55 3.7-8.25 8.25-8.25s8.25 3.7 8.25 8.25-3.7 8.25-8.25 8.25zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"
+        />
+      </svg>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

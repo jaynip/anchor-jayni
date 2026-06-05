@@ -1,0 +1,11 @@
+# Dependencies / tooling
+node_modules/
+.vercel/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Unused / heavy source media (not referenced by the site)
+Galaxy Hospital Reel 1.mp4
+hero1.mp4
