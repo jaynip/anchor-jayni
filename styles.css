@@ -156,8 +156,8 @@ em { font-style: italic; color: var(--clay); }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(5,16,30,0.84) 0%, rgba(5,16,30,0.55) 46%, rgba(5,16,30,0.22) 100%); }
 
 .hero__content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
-.hero__texts { position: relative; margin-bottom: 22px; }
-.hslide-text { position: absolute; top: 0; left: 0; right: 0; opacity: 0; pointer-events: none; }
+.hero__texts { position: relative; display: grid; margin-bottom: 22px; }
+.hslide-text { grid-area: 1 / 1; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
 .hslide-text.active { opacity: 1; pointer-events: auto; }
 
 .hero__eyebrow { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--clay-soft); margin-bottom: 22px; }

@@ -35,24 +35,20 @@
     var slides = Array.prototype.slice.call(document.querySelectorAll(".hero__slide"));
     var texts = Array.prototype.slice.call(document.querySelectorAll(".hslide-text"));
     var dots = Array.prototype.slice.call(document.querySelectorAll(".hero__dot"));
-    var prev = document.getElementById("heroPrev");
-    var next = document.getElementById("heroNext");
-    var textsWrap = document.getElementById("heroTexts");
     if (slides.length < 2) return;
 
+    var videos = slides.map(function (s) { return s.querySelector("video"); });
     var n = slides.length, cur = 0, timer = null;
     var DELAY = 5500;
 
-    // size the (absolutely-stacked) text container to the tallest slide's text
-    function sizeTexts() {
-      if (!textsWrap) return;
-      var max = 0;
-      texts.forEach(function (t) { max = Math.max(max, t.scrollHeight); });
-      textsWrap.style.height = max + "px";
+    // only the visible slide's video loads/plays — saves bandwidth on mobile
+    function playActive() {
+      videos.forEach(function (v, i) {
+        if (!v) return;
+        if (i === cur) { v.play().catch(function () {}); }
+        else { try { v.pause(); } catch (e) {} }
+      });
     }
-    sizeTexts();
-    window.addEventListener("load", sizeTexts);
-    window.addEventListener("resize", sizeTexts);
 
     function go(i) {
       i = (i + n) % n;
@@ -64,15 +60,15 @@
       slides[cur].classList.add("active");
       texts[cur].classList.add("active");
       dots[cur].classList.add("active");
+      playActive();
     }
     function nextSlide() { go(cur + 1); }
     function start() { if (!prefersReduced) timer = setInterval(nextSlide, DELAY); }
     function reset() { clearInterval(timer); start(); }
 
     dots.forEach(function (d, i) { d.addEventListener("click", function () { go(i); reset(); }); });
-    if (next) next.addEventListener("click", function () { go(cur + 1); reset(); });
-    if (prev) prev.addEventListener("click", function () { go(cur - 1); reset(); });
 
+    playActive();
     start();
   })();
 
@@ -132,17 +128,25 @@
     });
   }
 
-  /* ---- Showreel horizontal scroll arrows ---- */
-  var reel = document.getElementById("reel");
-  var prev = document.getElementById("reelPrev");
-  var next = document.getElementById("reelNext");
-  function scrollAmount() {
-    var card = reel && reel.querySelector(".rcard, .card");
-    return card ? card.offsetWidth + 24 : 400;
+  /* ---- Showreel: lazy-load the Instagram reel iframes only when scrolled near ---- */
+  var showreel = document.getElementById("showreel");
+  function loadReels() {
+    if (!showreel) return;
+    showreel.querySelectorAll("iframe[data-src]").forEach(function (f) {
+      f.src = f.getAttribute("data-src");
+      f.removeAttribute("data-src");
+    });
   }
-  if (reel && prev && next) {
-    prev.addEventListener("click", function () { reel.scrollBy({ left: -scrollAmount(), behavior: "smooth" }); });
-    next.addEventListener("click", function () { reel.scrollBy({ left: scrollAmount(), behavior: "smooth" }); });
+  if (showreel && "IntersectionObserver" in window) {
+    var reelIO = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        loadReels();
+        reelIO.disconnect();
+      }
+    }, { rootMargin: "700px 0px" });
+    reelIO.observe(showreel);
+  } else {
+    loadReels();
   }
 
   /* ---- Lightbox ---- */
