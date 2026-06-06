@@ -72,21 +72,30 @@
     start();
   })();
 
-  /* ---- Reveal / clip / mask on scroll (everything outside hero) ---- */
-  var revealEls = document.querySelectorAll(".reveal, [data-reveal-clip], .contact .mask");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("in"); });
+  /* ---- Reveal / clip / mask on scroll (robust: IO + scroll fallback) ----
+     A scroll/position check is used alongside IntersectionObserver because the
+     pinned (GSAP) Services section can make IO miss elements below it, leaving
+     them stuck invisible (e.g. the testimonials). The fallback guarantees any
+     element within the viewport gets revealed. */
+  var revealEls = Array.prototype.slice.call(
+    document.querySelectorAll(".reveal, [data-reveal-clip], .contact .mask")
+  );
+  function revealInView() {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    for (var i = revealEls.length - 1; i >= 0; i--) {
+      var el = revealEls[i];
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) {
+        el.classList.add("in");
+        revealEls.splice(i, 1); // reveal once
+      }
+    }
   }
+  revealInView();
+  window.addEventListener("scroll", revealInView, { passive: true });
+  window.addEventListener("resize", revealInView, { passive: true });
+  window.addEventListener("load", revealInView);
+  setTimeout(revealInView, 400);
 
   /* ---- Parallax on scroll ---- */
   var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
