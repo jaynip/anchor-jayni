@@ -216,10 +216,12 @@ em { font-style: italic; color: var(--clay); }
 .rbtn { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; transition: background 0.4s ease, color 0.4s ease, transform 0.4s var(--ease); }
 .rbtn:hover { background: var(--ink); color: var(--bone); transform: translateY(-2px); }
 
-/* auto-scrolling reel marquee */
-.reel { overflow: hidden; padding: 6px 0 30px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.reel__track { display: flex; gap: 24px; width: max-content; padding: 0 24px; animation: scroll-x 70s linear infinite; }
-.reel:hover .reel__track { animation-play-state: paused; }
+/* auto-scrolling + draggable reel marquee */
+.reel { overflow-x: auto; overflow-y: hidden; padding: 6px 0 30px; cursor: grab; scrollbar-width: none; -webkit-overflow-scrolling: touch; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.reel::-webkit-scrollbar { display: none; }
+.reel.dragging { cursor: grabbing; }
+.reel.dragging .rcard { pointer-events: none; }
+.reel__track { display: flex; gap: 24px; width: max-content; padding: 0 24px; }
 .card { flex: 0 0 380px; scroll-snap-align: start; cursor: pointer; border-radius: 4px; overflow: hidden; background: var(--paper); transition: transform 0.5s var(--slow); }
 .card:hover { transform: translateY(-8px); }
 .card:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }

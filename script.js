@@ -188,6 +188,65 @@
     if (track) track.innerHTML += track.innerHTML;
   });
 
+  /* ---- Reel: auto-scroll + manual drag/swipe (left↔right) ---- */
+  (function initReelScroller() {
+    var reel = document.getElementById("reel");
+    var track = document.getElementById("reelTrack");
+    if (!reel || !track) return;
+
+    var SPEED = 0.5;        // px per frame for the gentle auto-scroll
+    var half = 0;           // width of one (un-duplicated) copy
+    var paused = false, resumeTO = null;
+
+    function measure() { half = track.scrollWidth / 2; }
+    function normalize() {
+      if (!half) return;
+      if (reel.scrollLeft >= half) reel.scrollLeft -= half;
+      else if (reel.scrollLeft < 0) reel.scrollLeft += half;
+    }
+    function pause() { paused = true; clearTimeout(resumeTO); }
+    function resumeSoon(delay) { clearTimeout(resumeTO); resumeTO = setTimeout(function () { paused = false; }, delay || 1600); }
+
+    function tick() {
+      if (!paused) { reel.scrollLeft += SPEED; normalize(); }
+      requestAnimationFrame(tick);
+    }
+
+    // keep the loop seamless when the user scrolls/drags manually
+    reel.addEventListener("scroll", normalize, { passive: true });
+
+    // pause while interacting, resume shortly after
+    reel.addEventListener("mouseenter", pause);
+    reel.addEventListener("mouseleave", function () { resumeSoon(800); });
+    reel.addEventListener("wheel", function () { pause(); resumeSoon(); }, { passive: true });
+    reel.addEventListener("touchstart", pause, { passive: true });
+    reel.addEventListener("touchend", function () { resumeSoon(); }, { passive: true });
+
+    // click-drag to scroll (desktop mouse)
+    var dragging = false, startX = 0, startLeft = 0;
+    reel.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse") return; // touch uses native scroll
+      dragging = true; startX = e.clientX; startLeft = reel.scrollLeft;
+      reel.classList.add("dragging"); pause();
+      try { reel.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    reel.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      reel.scrollLeft = startLeft - (e.clientX - startX);
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false; reel.classList.remove("dragging"); resumeSoon();
+    }
+    reel.addEventListener("pointerup", endDrag);
+    reel.addEventListener("pointercancel", endDrag);
+
+    measure();
+    window.addEventListener("load", measure);
+    window.addEventListener("resize", measure);
+    if (!prefersReduced) requestAnimationFrame(tick);
+  })();
+
   /* ---- Services: pinned, scroll-driven blur text scroller (GSAP ScrollTrigger) ---- */
   (function initServices() {
     var section = document.getElementById("services");
