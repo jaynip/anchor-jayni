@@ -23,12 +23,19 @@
   /* ---- Mobile menu ---- */
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");
-  function closeMenu() { links.classList.remove("open"); toggle.classList.remove("open"); }
-  toggle.addEventListener("click", function () {
-    links.classList.toggle("open");
-    toggle.classList.toggle("open");
-  });
+  var backdrop = document.getElementById("navBackdrop");
+  function setMenu(open) {
+    links.classList.toggle("open", open);
+    toggle.classList.toggle("open", open);
+    if (backdrop) backdrop.classList.toggle("open", open);
+    document.body.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function closeMenu() { setMenu(false); }
+  toggle.addEventListener("click", function () { setMenu(!links.classList.contains("open")); });
   links.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+  if (backdrop) backdrop.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
 
   /* ---- Hero: sliding banners with animated text ---- */
   (function initHeroSlider() {
